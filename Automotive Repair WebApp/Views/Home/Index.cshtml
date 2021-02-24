@@ -29,9 +29,124 @@
             ::-webkit-scrollbar-thumb:hover {
                 background: #b30000;
             }
+
+        /*body {
+            margin: 0;
+            padding: 0;
+            background: #34495e;
+        }*/
+
+        .slidershow {
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .bar {
+            width: 50px;
+            height: 10px;
+            border: 2px solid #fff;
+            margin: 6px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+            .bar:hover {
+                background: #fff;
+            }
+
+        input[name="r"] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .slides {
+            width: 500%;
+            height: 100%;
+            display: flex;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 0.6s;
+        }
+
+            .slide img {
+                width: 100%;
+                height: 100%;
+            }
+
+        #r1:checked ~ .s1 {
+            margin-left: 0;
+        }
+
+        #r2:checked ~ .s1 {
+            margin-left: -20%;
+        }
+
+        #r3:checked ~ .s1 {
+            margin-left: -40%;
+        }
+
+        #r4:checked ~ .s1 {
+            margin-left: -60%;
+        }
+
+        #r5:checked ~ .s1 {
+            margin-left: -80%;
+        }
+
     </style>
 </head>
 <body>
+    <div class="slidershow middle">
+
+        <div class="slides">
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <input type="radio" name="r" id="r5">
+            <div class="slide s1">
+                <img src="~/Images/auto-3209511.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="~/Images/car-63930.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="~/Images/In-Ground-Vehicle-Lifts-vs.-Above-Ground-Vehicle-Lifts.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="~/Images/super-cheap-tyres-auckland.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="~/Images/tyre_fitting2.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+        </div>
+    </div>
     <div id="progressbar"></div>
     <div id="scrollPath"></div>
     <section>
@@ -148,15 +263,15 @@
             h
         </p>
     </section>
-    <script type="text/javascript">
-        Let progress = document.getElementByIs('progressbar');
-        Let totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = funtion(){
-            Let progressHeight = (window.pageYOffset /
-                totalHeight) * 100;
-            progress.style / height = progressHeight + "%";
-        }
-    </script>
+    @*<script type="text/javascript">
+            Let progress = document.getElementByIs('progressbar');
+            Let totalHeight = document.body.scrollHeight - window.innerHeight;
+            window.onscroll = funtion(){
+                Let progressHeight = (window.pageYOffset /
+                    totalHeight) * 100;
+                progress.style / height = progressHeight + "%";
+            }
+        </script>*@
 </body>
 </html>
 
