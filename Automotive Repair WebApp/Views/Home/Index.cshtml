@@ -43,7 +43,7 @@
         }
 
         .middle {
-            position: initial;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-100%);
@@ -111,6 +111,10 @@
             margin-left: -80%;
         }
 
+        .move {
+            position: relative;
+            top: 470px;
+        }
     </style>
 </head>
 <body>
@@ -147,9 +151,9 @@
             <label for="r5" class="bar"></label>
         </div>
     </div>
-    <div id="progressbar"></div>
-    <div id="scrollPath"></div>
-    <section>
+    @*<div id="progressbar"></div>
+    <div id="scrollPath"></div>*@
+    <div class="move">
         <h2>aziz's scroll bar test</h2>
         <p>
             Good whereas next representing, representing humanity inevitable
@@ -262,7 +266,7 @@
             Lot represents depicts been given so ergo ever, copy hero, an,
             h
         </p>
-    </section>
+    </div>
     @*<script type="text/javascript">
             Let progress = document.getElementByIs('progressbar');
             Let totalHeight = document.body.scrollHeight - window.innerHeight;
