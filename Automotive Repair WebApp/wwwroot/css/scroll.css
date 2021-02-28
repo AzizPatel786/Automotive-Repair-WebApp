@@ -318,31 +318,37 @@ section p
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .slide:nth-child(2) {
     background: url('../Images/car-63930.jpg') no-repeat center top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .slide:nth-child(3) {
     background: url('../Images/In-Ground-Vehicle-Lifts-vs.-Above-Ground-Vehicle-Lifts.jpg') no-repeat center top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .slide:nth-child(4) {
     background: url('../Images/super-cheap-tyres-auckland.jpg') no-repeat center top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .slide:nth-child(5) {
     background: url('../Images/tyre_fitting2.jpg') no-repeat center top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .slide:nth-child(6) {
     background: url('https://source.unsplash.com/ggZuL3BTSJU/1600x900') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 
