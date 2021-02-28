@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 20px 10%;
   background-color: #24252a;
 }
 
@@ -32,11 +32,13 @@ header {
 
 .nav__links li {
   padding: 0px 20px;
+  white-space:nowrap;
 }
 
-.nav__links li a {
-  transition: color 0.3s ease 0s;
-}
+    .nav__links li a {
+        transition: color 0.3s ease 0s;
+        white-space: nowrap;
+    }
 
 .nav__links li a:hover {
   color: #0088a9;
