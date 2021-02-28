@@ -225,18 +225,14 @@ section p
     padding: 0;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #333;
-    color: #fff;
-    line-height: 1.6;
-}
+
 
 .slider {
     position: relative;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    left: -130px;
 }
 
 .slide {
@@ -287,7 +283,7 @@ body {
 }
 
 .buttons button {
-    border: 2px solid #fff;
+    border: 2px solid #347fc3;
     background-color: transparent;
     color: #fff;
     cursor: pointer;
@@ -297,7 +293,7 @@ body {
 }
 
     .buttons button:hover {
-        background-color: #fff;
+        background-color: #347fc3;
         color: #333;
     }
 
@@ -325,21 +321,101 @@ body {
 }
 
 .slide:nth-child(2) {
-    background: url('https://source.unsplash.com/BeOW_PJjA0w/1600x900') no-repeat center top;
+    background: url('../Images/car-63930.jpg') no-repeat center top;
+    background-size: cover;
 }
 
 .slide:nth-child(3) {
-    background: url('https://source.unsplash.com/TMOeGZw9NY4/1600x900') no-repeat center top;
+    background: url('../Images/In-Ground-Vehicle-Lifts-vs.-Above-Ground-Vehicle-Lifts.jpg') no-repeat center top;
+    background-size: cover;
 }
 
 .slide:nth-child(4) {
-    background: url('https://source.unsplash.com/yXpA_eCbtzI/1600x900') no-repeat center top;
+    background: url('../Images/super-cheap-tyres-auckland.jpg') no-repeat center top;
+    background-size: cover;
 }
 
 .slide:nth-child(5) {
-    background: url('https://source.unsplash.com/ULmaQh9Gvbg/1600x900') no-repeat center top;
+    background: url('../Images/tyre_fitting2.jpg') no-repeat center top;
+    background-size: cover;
 }
 
 .slide:nth-child(6) {
     background: url('https://source.unsplash.com/ggZuL3BTSJU/1600x900') no-repeat center center;
+    background-size: cover;
 }
+
+
+
+
+
+
+/*
+
+html, body {
+    background: #fff;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.bar {
+    position: relative;
+    height: 2px;
+    width: 500px;
+    margin: 0 auto;
+    background: #347fc3;
+    margin-top: 150px;
+}
+
+.circle {
+    position: absolute;
+    top: -30px;
+    margin-left: -30px;
+    height: 60px;
+    width: 60px;
+    left: 0;
+    background: #347fc3;
+    border-radius: 30%;
+    -webkit-animation: move 5s infinite;
+}
+
+p {
+    position: absolute;
+    top: -35px;
+    right: -85px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-weight: bold;
+}
+
+@-webkit-keyframes move {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 100%;
+        -webkit-transform: rotate(450deg);
+        width: 150px;
+        height: 150px;
+    }
+
+    75% {
+        left: 100%;
+        -webkit-transform: rotate(450deg);
+        width: 150px;
+        height: 150px;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+
+#myDiv {
+    display: none;
+    text-align: center;
+}*/

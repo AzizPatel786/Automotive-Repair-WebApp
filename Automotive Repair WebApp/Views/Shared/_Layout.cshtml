@@ -72,9 +72,12 @@
     <div class="overlay">
         <a class="close">&times;</a>
         <div class="overlay__content">
-            <a href="#">Services</a>
-            <a href="#">Projects</a>
-            <a href="#">About</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
+            <a asp-area="" asp-controller="Home" asp-action="Services">Services</a>
+            <a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
+            <a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </div>
     <div class="container">
@@ -83,11 +86,12 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Automotive_Repair_WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - Automotive_Repair_WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    <script src="~/js/mobile.js"></script>
     <script type="text/javascript" src="mobile.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
