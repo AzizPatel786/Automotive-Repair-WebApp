@@ -350,13 +350,13 @@ section p
 
 
 
-/*
+
 
 html, body {
     background: #fff;
     width: 100%;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 .bar {
@@ -418,4 +418,4 @@ p {
 #myDiv {
     display: none;
     text-align: center;
-}*/
+}

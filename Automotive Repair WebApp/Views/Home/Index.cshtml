@@ -3,13 +3,12 @@
 }
 
 <!DOCTYPE html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewData["Title"] Avondale Tyres & Car Repairs</title>
     <link rel="stylesheet" type="text/css" href="~/css/scroll.css" />
     @*<style>*@
-       @*/* p {
+    @*/* p {
             position: absolute;
             top: -35px;
             right: -85px;
@@ -26,130 +25,136 @@
         }*/*@
     @*</style>*@
     @*<style>
-        /* width */
-        /*::-webkit-scrollbar {
-            width: 10px;
-        }*/
-
-        /* Track */
-        /*::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px grey;
-            border-radius: 10px;
-        }*/
-
-        /* Handle */
-        /*::-webkit-scrollbar-thumb {
-            background: #0066cc;
-            border-radius: 10px;
-        }*/
-
-            /* Handle on hover */
-            /*::-webkit-scrollbar-thumb:hover {
-                background: #b30000;
+            /* width */
+            /*::-webkit-scrollbar {
+                width: 10px;
             }*/
 
-        /*body {
-            margin: 0;
-            padding: 0;
-            background: #34495e;
-        }*/
+            /* Track */
+            /*::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+            }*/
 
-        /*.slidershow {
-            width: 700px;
-            height: 400px;
-            overflow: hidden;
-            margin:auto;
-        }
+            /* Handle */
+            /*::-webkit-scrollbar-thumb {
+                background: #0066cc;
+                border-radius: 10px;
+            }*/
 
-        .middle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-100%);
-        }
+                /* Handle on hover */
+                /*::-webkit-scrollbar-thumb:hover {
+                    background: #b30000;
+                }*/
 
-        .navigation {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
+            /*body {
+                margin: 0;
+                padding: 0;
+                background: #34495e;
+            }*/
 
-        .bar {
-            width: 50px;
-            height: 10px;
-            border: 2px solid #fff;
-            margin: 6px;
-            cursor: pointer;
-            transition: 0.4s;
-        }
-
-            .bar:hover {
-                background: #fff;
+            /*.slidershow {
+                width: 700px;
+                height: 400px;
+                overflow: hidden;
+                margin:auto;
             }
 
-        input[name="r"] {
-            position: absolute;
-            visibility: hidden;
-        }
+            .middle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-100%);
+            }
 
-        .slides {
-            width: 500%;
-            height: 100%;
-            display: flex;
-        }
+            .navigation {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+            }
 
-        .slide {
-            width: 20%;
-            transition: 0.6s;
-        }
+            .bar {
+                width: 50px;
+                height: 10px;
+                border: 2px solid #fff;
+                margin: 6px;
+                cursor: pointer;
+                transition: 0.4s;
+            }
 
-            .slide img {
-                width: 100%;
+                .bar:hover {
+                    background: #fff;
+                }
+
+            input[name="r"] {
+                position: absolute;
+                visibility: hidden;
+            }
+
+            .slides {
+                width: 500%;
                 height: 100%;
+                display: flex;
             }
 
-        #r1:checked ~ .s1 {
-            margin-left: 0;
-        }
+            .slide {
+                width: 20%;
+                transition: 0.6s;
+            }
 
-        #r2:checked ~ .s1 {
-            margin-left: -20%;
-        }
+                .slide img {
+                    width: 100%;
+                    height: 100%;
+                }
 
-        #r3:checked ~ .s1 {
-            margin-left: -40%;
-        }
+            #r1:checked ~ .s1 {
+                margin-left: 0;
+            }
 
-        #r4:checked ~ .s1 {
-            margin-left: -60%;
-        }
+            #r2:checked ~ .s1 {
+                margin-left: -20%;
+            }
 
-        #r5:checked ~ .s1 {
-            margin-left: -80%;
-        }
+            #r3:checked ~ .s1 {
+                margin-left: -40%;
+            }
 
-        .move {
-            position: relative;
-            top: 120px;
-        }
-        .move1 {
-            position: relative;
-            top: 500px;
-        }*/
-    </style>*@
+            #r4:checked ~ .s1 {
+                margin-left: -60%;
+            }
+
+            #r5:checked ~ .s1 {
+                margin-left: -80%;
+            }
+
+            .move {
+                position: relative;
+                top: 120px;
+            }
+            .move1 {
+                position: relative;
+                top: 500px;
+            }*/
+        </style>*@
 </head>
 @*<body onload="myFunction()" style="margin:0;">
+
+        <div id="loader" class="bar">
+            <div class="circle"></div>
+            <p>Loading</p>
+        </div>
+    </body>*@
+@*<div style="display:none;" id="myDiv" class="animate-bottom">*@
+<body onload="myFunction()" style="margin:0;">
 
     <div id="loader" class="bar">
         <div class="circle"></div>
         <p>Loading</p>
     </div>
-</body>*@
-@*<div style="display:none;" id="myDiv" class="animate-bottom">*@
-
-
+</body>
+<div style="display:none;" id="myDiv" class="animate-bottom">
     <div class="slider">
         <div class="slide current">
             <div class="content">
@@ -213,7 +218,7 @@
 
     <script src="~/js/main.js"></script>
     <script>
-    var myVar;
+        var myVar;
 
         function myFunction() {
             myVar = setTimeout(showPage, 5000);
@@ -320,7 +325,7 @@
         <div id="scrollPath"></div>*@
     <div @*class="move"*@>
         <h2>aziz's scroll bar test</h2>
-        <p>
+        <p1>
             Good whereas next representing, representing humanity inevitable
             time has specifically manifest. Ergo his defined shame fact in
             point been embodies represents flaws given specifically instill
@@ -430,27 +435,28 @@
             an life day problem as as shown shocking manifestation God.
             Lot represents depicts been given so ergo ever, copy hero, an,
             h
-        </p>
+        </p1>
     </div>
-    @*<script type="text/javascript">
-            Let progress = document.getElementByIs('progressbar');
-            Let totalHeight = document.body.scrollHeight - window.innerHeight;
-            window.onscroll = funtion(){
-                Let progressHeight = (window.pageYOffset /
-                    totalHeight) * 100;
-                progress.style / height = progressHeight + "%";
-            }
-        </script>*@
+</div>
+@*<script type="text/javascript">
+        Let progress = document.getElementByIs('progressbar');
+        Let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = funtion(){
+            Let progressHeight = (window.pageYOffset /
+                totalHeight) * 100;
+            progress.style / height = progressHeight + "%";
+        }
+    </script>*@
 @*</div>*@
-    <script src="~/js/loader.js"></script>
 
 
 
 
+<script src="~/js/loader.js"></script>
 
 
 
-    @*<div class="text-center">
+@*<div class="text-center">
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>*@
