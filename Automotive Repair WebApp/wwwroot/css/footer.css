@@ -1,14 +1,18 @@
-﻿/** {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}*/
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-/*body {
-    font-family: 'Poppins', sans-serif;
-}*/
+html{
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
 
 .footer-area {
     margin-top: 100px;
@@ -20,11 +24,20 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2749c4', endColorstr='#6085b2',GradientType=1 );
     color: #fff;
     position: relative;
+    min-width: 100vh;
+    margin-left: initial;
+    margin-right: initial;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .main {
     width: 1200px;
-    margin: 0 auto;
+/*    margin: 0 auto;
+*/    margin-left: initial;
+    margin-right: initial;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .footer {
@@ -32,6 +45,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-top: auto;
 }
 
 .single-footer {
