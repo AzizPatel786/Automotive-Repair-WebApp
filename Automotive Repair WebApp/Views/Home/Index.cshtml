@@ -167,16 +167,40 @@
         </div>
     </body>*@
 @*<div style="display:none;" id="myDiv" class="animate-bottom">*@
-<body onload="myFunction()" style="margin:0;">
 
-    <div id="loader" class="bar">
-        <div class="circle"></div>
-        <p>Loading</p>
+@*<body onload="myFunction()" style="margin:0;">
+
+        <div id="loader" class="bar">
+            <div class="circle"></div>
+            <p>Loading</p>
+        </div>
+
+    </body>*@
+<body onload="myFunction()" style="margin:0;">
+    <div id="loader" class="animation-container">
+        <div class="lightning-container">
+            <div class="lightning white"></div>
+            <div class="lightning red"></div>
+        </div>
+        <div class="boom-container">
+            <div class="shape circle big white"></div>
+            <div class="shape circle white"></div>
+            <div class="shape triangle big yellow"></div>
+            <div class="shape disc white"></div>
+            <div class="shape triangle blue"></div>
+        </div>
+        <div class="boom-container second">
+            <div class="shape circle big white"></div>
+            <div class="shape circle white"></div>
+            <div class="shape disc white"></div>
+            <div class="shape triangle blue"></div>
+        </div>
     </div>
 
+    @*<div class="footer">Implemented with ❤ by <a href="https://mrossignol.fr" target="_blank">Maxime Rossignol</a> from an original idea by <a href="https://www.uplabs.com/shashanksahay" traget="_blank">Shashank Sahay</a></div>*@
 </body>
 
-<div class="qqq">
+
     <div style="display:none;" id="myDiv" class="animate-bottom">
         <div class="slider">
             <div class="slide current">
@@ -244,7 +268,7 @@
             var myVar;
 
             function myFunction() {
-                myVar = setTimeout(showPage, 5000);
+                myVar = setTimeout(showPage, 3000);
             }
 
             function showPage() {
@@ -461,78 +485,77 @@
             </p1>
         </div>
     </div>
-</div>
-@*<script type="text/javascript">
-        Let progress = document.getElementByIs('progressbar');
-        Let totalHeight = document.body.scrollHeight - window.innerHeight;
-        window.onscroll = funtion(){
-            Let progressHeight = (window.pageYOffset /
-                totalHeight) * 100;
-            progress.style / height = progressHeight + "%";
-        }
-    </script>*@
-@*</div>*@
+    @*<script type="text/javascript">
+            Let progress = document.getElementByIs('progressbar');
+            Let totalHeight = document.body.scrollHeight - window.innerHeight;
+            window.onscroll = funtion(){
+                Let progressHeight = (window.pageYOffset /
+                    totalHeight) * 100;
+                progress.style / height = progressHeight + "%";
+            }
+        </script>*@
+    @*</div>*@
 
 
 
 
-<script src="~/js/loader.js"></script>
+    <script src="~/js/loader.js"></script>
 
 
 
-@*<div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
+    @*<div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>*@
 
-@*<footer class="footer-area">
-        <link href="~/css/footer.css" rel="stylesheet" />
+    @*<footer class="footer-area">
+            <link href="~/css/footer.css" rel="stylesheet" />
 
-        <div class="footer-wave-box">
-            <div class="footer-wave footer-animation"></div>
-        </div>
-        <div class="main">
-            <div class="footer">
-                <div class="single-footer">
-                    <h4>about us</h4>
-                    <p1>NO.1 Automotive business in Auckland</p1>
-                    <div class="footer-social">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <div class="footer-wave-box">
+                <div class="footer-wave footer-animation"></div>
+            </div>
+            <div class="main">
+                <div class="footer">
+                    <div class="single-footer">
+                        <h4>about us</h4>
+                        <p1>NO.1 Automotive business in Auckland</p1>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="single-footer">
+                        <h4>main menu</h4>
+                        <ul>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> home</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> about us</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> services</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> gallery</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-footer">
+                        <h4>quick links</h4>
+                        <ul>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> privacy policy</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> terms & conditions</a></li>
+                            <li><a href=""><i class="fas fa-chevron-right"></i> disclaimer</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-footer">
+                        <h4>contact us</h4>
+                        <ul>
+                            <li><a href=""><i class="fas fa-map-marker-alt"></i>541 Rosebank Rd, Avondale</a></li>
+                            <li><a href=""><i class="fas fa-mobile-alt"></i> (09) 828 5857</a></li>
+                            <li><a href=""><i class="far fa-envelope"></i> avondale.tyres@gmail.com</a></li>
+                            <li><a href=""><i class="fas fa-globe-europe"></i> www.demo.com</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="single-footer">
-                    <h4>main menu</h4>
-                    <ul>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> home</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> about us</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> services</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> gallery</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> contact us</a></li>
-                    </ul>
-                </div>
-                <div class="single-footer">
-                    <h4>quick links</h4>
-                    <ul>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> privacy policy</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> terms & conditions</a></li>
-                        <li><a href=""><i class="fas fa-chevron-right"></i> disclaimer</a></li>
-                    </ul>
-                </div>
-                <div class="single-footer">
-                    <h4>contact us</h4>
-                    <ul>
-                        <li><a href=""><i class="fas fa-map-marker-alt"></i>541 Rosebank Rd, Avondale</a></li>
-                        <li><a href=""><i class="fas fa-mobile-alt"></i> (09) 828 5857</a></li>
-                        <li><a href=""><i class="far fa-envelope"></i> avondale.tyres@gmail.com</a></li>
-                        <li><a href=""><i class="fas fa-globe-europe"></i> www.demo.com</a></li>
-                    </ul>
+                <div class="copy">
+                    <p1>&copy; AvondaleTyres 2021 all rights reserved</p1>
                 </div>
             </div>
-            <div class="copy">
-                <p1>&copy; AvondaleTyres 2021 all rights reserved</p1>
-            </div>
-        </div>
-    </footer>*@
+        </footer>*@
