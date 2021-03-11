@@ -534,9 +534,8 @@ p {
     left: 0;
     display: flex;
     transform: translateY(-50%);
-    .lightning
 }
-
+    .lightning
 {
     position: absolute;
     display: block;
@@ -550,22 +549,18 @@ p {
     animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
     animation-direction: alternate;
 }
-    &.white
+    .white
 
 {
     background-color: #347fc3;
     box-shadow: 0px 50px 50px 0px transparentize(white, 0.7);
 }
 
-&.red {
+.red {
     background-color: #fc7171;
     box-shadow: 0px 50px 50px 0px transparentize(#fc7171, 0.7);
     animation-delay: 0.2s;
 }
-
-}
-}
-
 
 .boom-container {
     position: absolute;
@@ -577,16 +572,14 @@ p {
     transform: translateY(-50%);
     left: 200px;
     top: -145px;
-    .shape
-
-{
+}
+.shape {
     display: inline-block;
     position: relative;
     opacity: 0;
     transform-origin: center center;
-    &.triangle
-
-{
+}
+.triangle {
     width: 0;
     height: 0;
     border-style: solid;
@@ -598,7 +591,8 @@ p {
     border-width: 0 2.5px 5px 2.5px;
     border-color: transparent transparent #42e599 transparent;
     animation-name: boom-triangle;
-    &.big
+}
+    .big
 
 {
     margin-left: -25px;
@@ -607,9 +601,9 @@ p {
     animation-name: boom-triangle-big;
 }
 
-}
 
-&.disc {
+
+.disc {
     width: 8px;
     height: 8px;
     border-radius: 100%;
@@ -620,7 +614,7 @@ p {
     animation-iteration-count: infinite;
 }
 
-&.circle {
+.circle {
     width: 20px;
     height: 20px;
     animation-name: boom-circle;
@@ -629,65 +623,64 @@ p {
     animation-iteration-count: infinite;
     border-radius: 100%;
     margin-left: -30px;
-    &.white
+}
+    .white
 
 {
     border: 1px solid #347fc3;
 }
 
-&.big {
+.big {
     width: 40px;
     height: 40px;
     margin-left: 0px;
-    &.white
+}
+    .white
 
 {
     border: 2px solid #347fc3;
 }
 
-}
-}
 
-&:after {
+
+:after {
     background-color: rgba(178, 215, 232, 0.2);
 }
 
-}
 
-.shape {
-    &.triangle, &.circle, &.circle.big, &.disc
+
+.shape /*{
+         &.circle, &.circle.big, &.disc
+}*/
 
 {
     animation-delay: .38s;
     animation-duration: 3s;
 }
 
-&.circle {
+.circle {
     animation-delay: 0.6s;
 }
 
-}
 
-&.second {
+
+.second {
     left: 485px;
     top: 155px;
+}
     .shape
 
-{
-    &.triangle, &.circle, &.circle.big, &.disc
+/*{
+    &.triangle, &.circle, &.circle.big, &.disc*/
 
 {
     animation-delay: 1.9s;
 }
 
-&.circle {
+.circle {
     animation-delay: 2.15s;
 }
 
-}
-}
-}
-}
 
 @keyframes woosh {
     0% {
