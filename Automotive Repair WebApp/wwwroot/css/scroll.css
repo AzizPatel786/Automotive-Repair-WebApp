@@ -796,6 +796,52 @@ p {
     }
 }
 
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*a {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: #000000;
+    text-transform: uppercase;
+}*/
+
+.btn {
+    text-decoration: none;
+    border: 1px solid rgb(146, 148, 248);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-image: /*rgba(0, 136, 169, 1)*/ linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+}
+
+    .btn:hover {
+        box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+    }
+
+    .btn:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient( 120deg, transparent, rgba(146, 148, 248, 0.4), transparent );
+        transition: all 650ms;
+    }
+
+    .btn:hover:before {
+        left: 100%;
+    }
+
+
+
 /*
 // FOOTER
 .footer {
