@@ -54,13 +54,13 @@
                 </div>
             </nav>
         </header>*@
-    <header>
+    <!--<header>
         <a class="logo" href="/"><img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo"></a>
         <nav>
             <ul class="nav__links">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                @*<li><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>*@
-                <li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>-->
+    @*<li><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>*@
+    <!--<li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
@@ -82,28 +82,83 @@
             <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             <a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a>
         </div>
-    </div>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <div id="progressBarContainer">
-        <div id="progressBar"></div>
-    </div>
-    <script src="~/js/bar.js"></script>
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2021 - Automotive_Repair_WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>-->
+
+
+
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <div class="wrapper">
+
+
+        <div class="navbar navbar_2">
+            <div class="logo">Avondale<span>Tyres</span></div>
+            <ul class="menu">
+                @*<li><a href="#">Home</a></li>
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Profile</a></li>*@
+
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a class="active" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
+
+                </ul>
+                <ul class="social_items">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
             </div>
-        </footer>*@
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="~/js/mobile.js"></script>
-    <script type="text/javascript" src="mobile.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
+
+
+
+            <div class="overlay">
+                <a class="close">&times;</a>
+                <div class="overlay__content">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Services">Services</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+        <script src="~/js/bar.js"></script>
+        @*<footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2021 - Automotive_Repair_WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="~/js/mobile.js"></script>
+        <script type="text/javascript" src="mobile.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>
 
