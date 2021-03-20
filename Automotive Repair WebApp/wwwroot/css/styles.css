@@ -131,7 +131,7 @@ header {
   }
 }*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 * {
     list-style: none;
@@ -381,4 +381,128 @@ ul.social_items {
     .menu {
         display: initial;
     }
+}*/
+
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+.navbar {
+    font-size: 18px;
+   /* background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+        border: 1px solid rgba(0, 0, 0, 0.2);*/
+    padding-bottom: 10px;
+    background: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;
+}
+
+.nav-links,
+.logo {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-nav li {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+}
+
+.active {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+        .main-nav li {
+            margin: 0;
+        }
+
+    .nav-links {
+        margin-left: 40px;
+        color: #505978;
+    }
+
+    .logo {
+        margin-top: 0;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .logo:hover,
+    .nav-links:hover {
+        color: rgba(255, 255, 255, 1);
+        background: #505978;
+        color: #fff;
+        margin: 0 5px;
+        border: 1px solid #505978;
+        padding: 5px 20px;
+        border-radius: 25px;
+        transition: all 0.2s ease;
+    }
+}
+
+
+
+.navbar .logos {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+    .navbar .logos span {
+        color: #7ddf96;
+    }
+
+.bk {
+    color: #7ddf96;
+    background: #505978;
 }
