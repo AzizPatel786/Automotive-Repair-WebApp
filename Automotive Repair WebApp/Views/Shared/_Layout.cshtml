@@ -117,10 +117,30 @@
             </li>
         </ul>
     </nav>
+    <script>let mainNav = document.getElementById('main-nav');
+        let navbarToggle = document.getElementById('navbar-toggle');
+
+
+
+        navbarToggle.addEventListener('click', function () {
+
+            if (this.classList.contains('active')) {
+                mainNav.style.display = "none";
+                this.classList.remove('active');
+            }
+            else {
+                mainNav.style.display = "flex";
+                this.classList.add('active');
+
+            }
+        });</script>
     <script src="C:\Users\andyb\source\repos\Automotive-Repair-WebApp\Automotive Repair WebApp\Views\Shared\mobile.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
             crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <script src="C:\Users\ac98844\source\repos\Automotive-Repair-WebApp\Automotive Repair WebApp\Views\Shared\mobile.js"></script>
+    <script src="mobile.js"></script>
+
     <!--<div class="wrapper">
 
 
