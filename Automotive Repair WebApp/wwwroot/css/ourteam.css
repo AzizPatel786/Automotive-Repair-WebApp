@@ -71,7 +71,10 @@ body {
             font-size: 14px;
             line-height: 20px;
         }
-
+        .our_team .team_member .member_img .social_media  {
+            color: #25b1a8;
+            font-size: 20px;
+        }
         .our_team .team_member .member_img .social_media {
             position: absolute;
             top: 5px;
@@ -91,10 +94,10 @@ body {
                 margin: 0 10px;
             }
 
-            .our_team .team_member .member_img .social_media .fab {
+           /* .our_team .team_member .member_img .social_media .fab {
                 color: #25b1a8;
                 font-size: 20px;
-            }
+            }*/
 
         .our_team .team_member .member_img:hover .social_media {
             transform: scale(1);
