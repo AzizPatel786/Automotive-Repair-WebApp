@@ -42,6 +42,8 @@ namespace Automotive_Repair_WebApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+         
+            
 
             app.UseRouting();
 
