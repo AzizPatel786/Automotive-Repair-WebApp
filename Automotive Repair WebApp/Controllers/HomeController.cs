@@ -12,10 +12,13 @@ namespace Automotive_Repair_WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IStaffRepository _staffRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, 
+            IStaffRepository staffRepository)
         {
             _logger = logger;
+            _staffRepository = staffRepository;
         }
 
         public IActionResult Index()
