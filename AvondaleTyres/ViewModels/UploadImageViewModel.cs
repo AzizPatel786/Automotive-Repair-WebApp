@@ -11,6 +11,6 @@ namespace AvondaleTyres.ViewModels
     {
         [Required]
         [Display(Name = "Image")]
-        public IFormFile SpeakerPicture { get; set; }
+        public IFormFile StaffPicture { get; set; }
     }
 }

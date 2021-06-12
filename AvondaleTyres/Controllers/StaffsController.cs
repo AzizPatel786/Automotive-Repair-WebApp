@@ -1,31 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AvondaleTyres.Data;
+using AvondaleTyres.Models;
+using AvondaleTyres.ViewModels;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using AvondaleTyres.Data;
-using AvondaleTyres.Models;
 
 namespace AvondaleTyres.Controllers
 {
     public class StaffsController : Controller
     {
-        private readonly AppDbContext _context;
-
-        public StaffsController(AppDbContext context)
+        private readonly AppDbContext db;
+        private readonly IWebHostEnvironment webHostEnvironment;
+        public StaffsController(AppDbContext context, IWebHostEnvironment hostEnvironment)
         {
-            _context = context;
+            db = context;
+            webHostEnvironment = hostEnvironment;
         }
 
-        // GET: Staffs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Staffs.ToListAsync());
+            return View(await db.Staffs.ToListAsync());
         }
 
-        // GET: Staffs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,8 +33,20 @@ namespace AvondaleTyres.Controllers
                 return NotFound();
             }
 
-            var staff = await _context.Staffs
+            var staff = await db.Staffs
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+            var staffViewModel = new StaffViewModel()
+            {
+                Id = staff.Id,
+                Name = staff.Name,
+                Email = staff.Email,
+                Experience = staff.Experience,
+                Department = staff.Department,
+                Occupation = staff.Occupation,
+                ExistingImage = staff.ProfilePicture
+            };
+
             if (staff == null)
             {
                 return NotFound();
@@ -43,29 +55,36 @@ namespace AvondaleTyres.Controllers
             return View(staff);
         }
 
-        // GET: Staffs/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Staffs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email,Experience,Department,Occupation,ProfilePicture")] Staff staff)
+        public async Task<IActionResult> Create(StaffViewModel model)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(staff);
-                await _context.SaveChangesAsync();
+                string uniqueFileName = ProcessUploadedFile(model);
+                Staff staff = new Staff
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Email = model.Email,
+                    Experience = model.Experience,
+                    Department = model.Department,
+                    Occupation = model.Occupation,
+                    ProfilePicture = uniqueFileName
+                };
+
+                db.Add(staff);
+                await db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(staff);
+            return View(model);
         }
 
-        // GET: Staffs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,50 +92,55 @@ namespace AvondaleTyres.Controllers
                 return NotFound();
             }
 
-            var staff = await _context.Staffs.FindAsync(id);
+            var staff = await db.Staffs.FindAsync(id);
+            var staffViewModel = new StaffViewModel()
+            {
+                Id = staff.Id,
+                Name = staff.Name,
+                Email = staff.Email,
+                Experience = staff.Experience,
+                Department = staff.Department,
+                Occupation = staff.Occupation,
+                ExistingImage = staff.ProfilePicture
+            };
+
             if (staff == null)
             {
                 return NotFound();
             }
-            return View(staff);
+            return View(staffViewModel);
         }
 
-        // POST: Staffs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,Experience,Department,Occupation,ProfilePicture")] Staff staff)
+        public async Task<IActionResult> Edit(int id, StaffViewModel model)
         {
-            if (id != staff.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var staff = await db.Staffs.FindAsync(model.Id);
+                staff.Name = model.Name;
+                staff.Email = model.Email;
+                staff.Experience = model.Experience;
+                staff.Department = model.Department;
+                staff.Occupation = model.Occupation;
+
+                if (model.StaffPicture != null)
                 {
-                    _context.Update(staff);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StaffExists(staff.Id))
+                    if (model.ExistingImage != null)
                     {
-                        return NotFound();
+                        string filePath = Path.Combine(webHostEnvironment.WebRootPath, "Uploads", model.ExistingImage);
+                        System.IO.File.Delete(filePath);
                     }
-                    else
-                    {
-                        throw;
-                    }
+
+                    staff.ProfilePicture = ProcessUploadedFile(model);
                 }
+                db.Update(staff);
+                await db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(staff);
+            return View();
         }
 
-        // GET: Staffs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +148,65 @@ namespace AvondaleTyres.Controllers
                 return NotFound();
             }
 
-            var staff = await _context.Staffs
+            var staff = await db.Staffs
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+            var staffViewModel = new StaffViewModel()
+            {
+                Id = staff.Id,
+                Name = staff.Name,
+                Email = staff.Email,
+                Experience = staff.Experience,
+                Department = staff.Department,
+                Occupation = staff.Occupation,
+                ExistingImage = staff.ProfilePicture
+            };
             if (staff == null)
             {
                 return NotFound();
             }
 
-            return View(staff);
+            return View(staffViewModel);
         }
 
-        // POST: Staffs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var staff = await _context.Staffs.FindAsync(id);
-            _context.Staffs.Remove(staff);
-            await _context.SaveChangesAsync();
+            var staff = await db.Staffs.FindAsync(id);
+            var CurrentImage = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", staff.ProfilePicture);
+            db.Staffs.Remove(staff);
+            if (await db.SaveChangesAsync() > 0)
+            {
+                if (System.IO.File.Exists(CurrentImage))
+                {
+                    System.IO.File.Delete(CurrentImage);
+                }
+            }
             return RedirectToAction(nameof(Index));
         }
 
         private bool StaffExists(int id)
         {
-            return _context.Staffs.Any(e => e.Id == id);
+            return db.Staffs.Any(e => e.Id == id);
+        }
+
+        private string ProcessUploadedFile(StaffViewModel model)
+        {
+            string uniqueFileName = null;
+
+            if (model.StaffPicture != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "Uploads");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.StaffPicture.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.StaffPicture.CopyTo(fileStream);
+                }
+            }
+
+            return uniqueFileName;
         }
     }
 }
