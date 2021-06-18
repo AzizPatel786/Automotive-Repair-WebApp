@@ -4,14 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-
-namespace Automotive_Repair_WebApp.Models
+namespace Automotive_Repair_WebApp.ViewModels
 {
-    public class Staff
+    public class StaffViewModel : EditImageViewModel
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required, MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public String Name { get; set; }
 
@@ -31,9 +27,7 @@ namespace Automotive_Repair_WebApp.Models
         [Required]
         public String Occupation { get; set; }
 
-        [Required]
-        [Display(Name = "Image")]
-        public string ProfilePicture { get; set; }
+        
         //Requirements when creating a staff
     }
 }

@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Automotive_Repair_WebApp.Data;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Automotive_Repair_WebApp
 {
@@ -23,6 +27,14 @@ namespace Automotive_Repair_WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<IdentityUser, IdentityRole>()
+        .AddEntityFrameworkStores<AppDbContext>();
+            //IdentityUser class is provided by ASP.NET core and contains properties for 
+            //UserName, PasswordHash, Email etc. This is the class that is used by default 
+            //by the ASP.NET Core Identity framework to manage registered users of my application. 
+
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddMvc();
             services.AddControllersWithViews();
         }
@@ -46,6 +58,8 @@ namespace Automotive_Repair_WebApp
             
 
             app.UseRouting();
+            app.UseAuthentication();
+
 
             app.UseAuthorization();
 

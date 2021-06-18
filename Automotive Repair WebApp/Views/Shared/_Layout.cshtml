@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -112,12 +114,40 @@
             <li>
                 <a asp-area="" asp-controller="Home" asp-action="Aboutus" class="nav-links">AboutUs</a>
             </li>
-            <li>
-                <a asp-area="" asp-controller="Home" asp-action="LoginRegister" class="nav-links">Login</a>
-            </li>
+            @*<li>
+                    <a asp-area="" asp-controller="Home" asp-action="LoginRegister" class="nav-links">Login</a>
+                </li>*@
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            @*If the user is signed-in display Logout link*@
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="nav-item">
+                    <form method="post" asp-controller="account" asp-action="logout">
+                        <button type="submit" style="width:auto"
+                                class="nav-link btn btn-link py-0">
+                            Logout @User.Identity.Name
+                        </button>
+                    </form>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="account" asp-action="register">
+                        Register
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="account" asp-action="login">
+                        Login
+                    </a>
+                </li>
+            }
         </ul>
     </nav>
-    <script>let mainNav = document.getElementById('main-nav');
+    <script>
+    let mainNav = document.getElementById('main-nav');
         let navbarToggle = document.getElementById('navbar-toggle');
 
 
@@ -210,5 +240,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
-    </html>
+</html>
 
