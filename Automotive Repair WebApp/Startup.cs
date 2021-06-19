@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Automotive_Repair_WebApp.Data;
 using Microsoft.AspNetCore.Identity;
-
+using Automotive_Repair_WebApp.Models;
 
 namespace Automotive_Repair_WebApp
 {
@@ -37,6 +37,39 @@ namespace Automotive_Repair_WebApp
 
             services.AddMvc();
             services.AddControllersWithViews();
+            services.AddMvc(option => option.EnableEndpointRouting = false).AddXmlDataContractSerializerFormatters();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("DeleteRolePolicy",
+                    policy => policy.RequireClaim("Delete Role"));
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("EditRolePolicy",
+                    policy => policy.RequireClaim("Edit Role"));
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CreateRolePolicy",
+                    policy => policy.RequireClaim("Create Role"));
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CreateUserPolicy",
+                    policy => policy.RequireClaim("Create User"));
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("DeleteUserPolicy",
+                    policy => policy.RequireClaim("Delete User"));
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("EditUserPolicy",
+                    policy => policy.RequireClaim("Edit User"));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
