@@ -1,4 +1,7 @@
-﻿<link href="~/css/ourteam.css" rel="stylesheet" />
+﻿@*@model IEnumerable<Staff>*@
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Automotive_Repair_WebApp.Models.Staff>
+<link href="~/css/ourteam.css" rel="stylesheet" />
 
 <link href="~/css/scroll1.css" rel="stylesheet" />
 @{
@@ -84,64 +87,88 @@
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
-<div class="wrapper">
-    <h1>Our Team</h1>
-    <div class="our_team">
-        <div class="team_member">
-            <div class="member_img">
-                <img src="https://lh4.googleusercontent.com/-jqw7tla7R7I/WU84KqlnHjI/AAAAAAAAzs8/NuWva9ogN6kw0QVFzpBTAGYnZmooLH9swCLIBGAYYCw/w1440-h810-k-no/" alt="our_team">
-                <div class="social_media">
-                    <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                    <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                    <div class="instagram item"><i class="fab fa-instagram"></i></div>
+@if (Model.Any())
+{
+    <div class="wrapper">
+        <h1>Our Team</h1>
+        <div class="our_team">
+            @foreach (var staff in Model)
+            {
+                <div class="team_member">
+                    <div class="member_img">
+                        @*src="https://lh4.googleusercontent.com/-jqw7tla7R7I/WU84KqlnHjI/AAAAAAAAzs8/NuWva9ogN6kw0QVFzpBTAGYnZmooLH9swCLIBGAYYCw/w1440-h810-k-no/"*@
+                        <img src="~/Uploads/@staff.ProfilePicture" alt="our_team">
+                        <div class="social_media">
+                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <h3>@staff.Name</h3>
+                    <span>@staff.Occupation</span>
+                    <p>@staff.Email<br>@staff.Experience Years<br>@staff.Department</p>
                 </div>
-            </div>
-            <h3>Mushtaq Patel</h3>
-            <span>CEO</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-        </div>
-        <div class="team_member">
-            <div class="member_img">
-                <img src="~/Images/shop.JPG" alt="our_team">
-                <div class="social_media">
-                    <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                    <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                    <div class="instagram item"><i class="fab fa-instagram"></i></div>
+            }
+            @*<div class="team_member">
+                    <div class="member_img">
+                        <img src="~/Images/shop.JPG" alt="our_team">
+                        <div class="social_media">
+                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <h3>Damon</h3>
+                    <span>WOF Inspector</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
                 </div>
-            </div>
-            <h3>Damon</h3>
-            <span>WOF Inspector</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-        </div>
-        <div class="team_member">
-            <div class="member_img">
-                <img src="~/Images/civic.JPG" alt="our_team">
-                <div class="social_media">
-                    <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                    <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                    <div class="instagram item"><i class="fab fa-instagram"></i></div>
+                <div class="team_member">
+                    <div class="member_img">
+                        <img src="~/Images/civic.JPG" alt="our_team">
+                        <div class="social_media">
+                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <h3>Dimitri</h3>
+                    <span>PanelBeater</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
                 </div>
-            </div>
-            <h3>Dimitri</h3>
-            <span>PanelBeater</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-        </div>
-        <div class="team_member">
-            <div class="member_img">
-                <img src="~/Images/streetview.JPG" alt="our_team">
-                <div class="social_media">
-                    <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                    <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                    <div class="instagram item"><i class="fab fa-instagram"></i></div>
-                </div>
-            </div>
-            <h3>Melvin</h3>
-            <span>Mechanical Specialist</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+                <div class="team_member">
+                    <div class="member_img">
+                        <img src="~/Images/streetview.JPG" alt="our_team">
+                        <div class="social_media">
+                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+                        </div>
+                    </div>
+                    <h3>Melvin</h3>
+                    <span>Mechanical Specialist</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+                </div>*@
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No users created yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to create a user
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="Account" asp-action="Register">
+                Add new user
+            </a>
+        </div>
+    </div>
+}
+
 
 
 <script src="~/js/bar.js"></script>

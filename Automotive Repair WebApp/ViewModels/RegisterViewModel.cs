@@ -11,8 +11,8 @@ namespace Automotive_Repair_WebApp.ViewModels
     {
         [Required]
         [EmailAddress]
-        [ValidEmailDomain(allowedDomain: "avondaletyres@gmail.com",
-        ErrorMessage = "Email domain must be avondaletyres@gmail.com")]
+        //[ValidEmailDomain(allowedDomain: "avondaletyres@gmail.com",
+        //ErrorMessage = "Email domain must be avondaletyres@gmail.com")]
         public string Email { get; set; }
 
         [Required]
