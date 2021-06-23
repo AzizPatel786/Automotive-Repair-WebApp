@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Automotive_Repair_WebApp.Data;
 using Microsoft.AspNetCore.Identity;
 using Automotive_Repair_WebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Automotive_Repair_WebApp
 {
@@ -34,6 +35,12 @@ namespace Automotive_Repair_WebApp
             //by the ASP.NET Core Identity framework to manage registered users of my application. 
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Administration/AccessDenied");
+            });
+
 
             services.AddMvc();
             services.AddControllersWithViews();

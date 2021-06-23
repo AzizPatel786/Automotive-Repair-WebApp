@@ -1,6 +1,7 @@
 ﻿using Automotive_Repair_WebApp.Data;
 using Automotive_Repair_WebApp.Models;
 using Automotive_Repair_WebApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,11 +21,12 @@ namespace Automotive_Repair_WebApp.Controllers
             db = context;
             webHostEnvironment = hostEnvironment;
         }
-
+        [Authorize(Roles = "Staff,Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await db.Staffs.ToListAsync());
         }
+        [Authorize(Roles = "Staff,Admin")]
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -54,6 +56,7 @@ namespace Automotive_Repair_WebApp.Controllers
 
             return View(staff);
         }
+        [Authorize(Roles = "Admin")]
 
         public IActionResult Create()
         {
@@ -84,6 +87,7 @@ namespace Automotive_Repair_WebApp.Controllers
             }
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
 
         public async Task<IActionResult> Edit(int? id)
         {

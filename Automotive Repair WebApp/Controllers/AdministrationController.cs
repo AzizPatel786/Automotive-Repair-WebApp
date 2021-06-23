@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Automotive_Repair_WebApp.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Staff")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -176,7 +176,7 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Policy = "DeleteUserPolicy")]
+        [Authorize(Policy = "DeleteUserPolicy")]
         public async Task<IActionResult> DeleteUser(string id)
         {
             var user = await userManager.FindByIdAsync(id); //Finds the Id in the database
@@ -203,8 +203,15 @@ namespace Automotive_Repair_WebApp.Controllers
                 return View("ListUsers");
             }
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         [HttpPost]
-        //[Authorize(Policy = "DeleteRolePolicy")] //user must be assigned delete role claim
+        [Authorize(Policy = "DeleteRolePolicy")] //user must be assigned delete role claim
         public async Task<IActionResult> DeleteRole(string id)
         {
             var role = await roleManager.FindByIdAsync(id); //Finds the Id in the database
@@ -252,7 +259,7 @@ namespace Automotive_Repair_WebApp.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")] //displays only if user is in admin role
+        [Authorize(Roles = "Staff,Admin")] //displays only if user is in staff and admin role
         [HttpGet]
         public IActionResult ListUsers()
         {

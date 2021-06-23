@@ -17,7 +17,7 @@ namespace Automotive_Repair_WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IStaffRepository _staffRepository;
+        //private readonly IStaffRepository _staffRepository;
         private readonly AppDbContext db;
 
         private readonly IWebHostEnvironment webHostEnvironment;
