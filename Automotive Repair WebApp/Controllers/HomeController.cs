@@ -71,38 +71,26 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Getaquote(QuoteToEmailViewModel vm)
+        [ValidateAntiForgeryToken]
+
+        public async Task<ActionResult> Getaquote(QuoteToEmail model)
         {
             if (ModelState.IsValid)
             {
-                try
+                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var message = new MailMessage();
+                message.To.Add(new MailAddress("name@gmail.com")); //replace with valid value
+                message.Subject = "Your email subject";
+                message.Body = string.Format(body, model.FromName, model.FromEmail, model.Message);
+                message.IsBodyHtml = true;
+                if (model.Upload != null)
                 {
-                    MailMessage msz = new MailMessage();
-                    msz.From = new MailAddress(vm.FromEmail);//Email which you are getting 
-                                                         //from contact us page 
-                    msz.To.Add("m.azizp23@gmail.com");//Where mail will be sent 
-                    msz.Subject = vm.Subject;
-                    msz.Body = vm.Message;
-                    SmtpClient smtp = new SmtpClient();
-
-                    smtp.Host = "smtp.gmail.com";
-
-                    smtp.Port = 587;
-
-                    smtp.Credentials = new System.Net.NetworkCredential
-                    ("m.azizp23@gmail.com", "MohammeddO4567");
-
-                    smtp.EnableSsl = true;
-
-                    smtp.Send(msz);
-
-                    ModelState.Clear();
-                    ViewBag.Message = "Thank you for Contacting us ";
+                    message.Attachments.Add(new Attachment(model.Upload.InputStream, Path.GetFileName(model.Upload.FileName)));
                 }
-                catch (Exception ex)
+                using (var smtp = new SmtpClient())
                 {
-                    ModelState.Clear();
-                    ViewBag.Message = $" Sorry we are facing Problem here {ex.Message}";
+                    await smtp.SendMailAsync(message);
+                    return RedirectToAction("Sent");
                 }
             }
 

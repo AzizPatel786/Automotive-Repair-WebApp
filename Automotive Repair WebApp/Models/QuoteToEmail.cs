@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
-
+using System.ComponentModel;
+using Microsoft.AspNetCore.Http;
 
 namespace Automotive_Repair_WebApp.Models
 {
@@ -22,5 +23,6 @@ namespace Automotive_Repair_WebApp.Models
         public string MobilePhone { get; set; }
         [Required]
         public string Subject { get; set; }
+        public IFormFile Upload { get; set; }
     }
 }
