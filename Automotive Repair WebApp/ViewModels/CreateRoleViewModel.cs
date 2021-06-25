@@ -13,4 +13,3 @@ namespace Automotive_Repair_WebApp.ViewModels
         public string RoleName { get; set; }
     }
 }
-.
