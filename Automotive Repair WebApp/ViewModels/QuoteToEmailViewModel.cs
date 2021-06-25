@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using System.Web;
 
-
-namespace Automotive_Repair_WebApp.Models
+namespace Automotive_Repair_WebApp.ViewModels
 {
-    public class QuoteToEmail
+    public class QuoteToEmailViewModel
     {
         [Required, Display(Name = "Your name")]
         public string FromName { get; set; }

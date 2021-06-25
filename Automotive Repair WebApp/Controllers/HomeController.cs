@@ -64,55 +64,61 @@ namespace Automotive_Repair_WebApp.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Getaquote()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Getaquote(QuoteToEmail model)
+        public IActionResult Getaquote(QuoteToEmailViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
-                var message = new MailMessage();
-                message.To.Add(new MailAddress("ac98844@avcol.school.nz"));  // replace with valid value 
-                message.From = new MailAddress("ac98844@avcol.school.nz");  // replace with valid value
-                message.Subject = "Your email subject";
-                message.Body = string.Format(body, model.FromName, model.FromEmail, model.Message);
-                message.IsBodyHtml = true;
-
-                using (var smtp = new SmtpClient())
+                try
                 {
-                    var credential = new NetworkCredential
-                    {
-                        UserName = "ac98844@avcol.school.nz",  // replace with valid value
-                        Password = "MohammeddO4567"  // replace with valid value
-                    };
-                    smtp.Credentials = credential;
-                    smtp.Host = "smtp.office365.com";
+                    MailMessage msz = new MailMessage();
+                    msz.From = new MailAddress(vm.FromEmail);//Email which you are getting 
+                                                         //from contact us page 
+                    msz.To.Add("m.azizp23@gmail.com");//Where mail will be sent 
+                    msz.Subject = vm.Subject;
+                    msz.Body = vm.Message;
+                    SmtpClient smtp = new SmtpClient();
+
+                    smtp.Host = "smtp.gmail.com";
+
                     smtp.Port = 587;
+
+                    smtp.Credentials = new System.Net.NetworkCredential
+                    ("m.azizp23@gmail.com", "MohammeddO4567");
+
                     smtp.EnableSsl = true;
-                    await smtp.SendMailAsync(message);
-                    return RedirectToAction("Sent");
+
+                    smtp.Send(msz);
+
+                    ModelState.Clear();
+                    ViewBag.Message = "Thank you for Contacting us ";
+                }
+                catch (Exception ex)
+                {
+                    ModelState.Clear();
+                    ViewBag.Message = $" Sorry we are facing Problem here {ex.Message}";
                 }
             }
-            return View(model);
-        }
 
-
-        public ActionResult Sent()
-        {
             return View();
         }
+        //public IActionResult Error()
+        //{
+        //    return View();
+        //}
 
 
 
 
 
 
-        public IActionResult Wof()
+    public IActionResult Wof()
         {
             return View();
         }

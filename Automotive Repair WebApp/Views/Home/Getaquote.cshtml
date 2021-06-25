@@ -1,50 +1,120 @@
-﻿@model Automotive_Repair_WebApp.Models.QuoteToEmail
+﻿@*@model Automotive_Repair_WebApp.Models.QuoteToEmail*@
+@model Automotive_Repair_WebApp.ViewModels.QuoteToEmailViewModel
 @{
     ViewData["Title"] = "Getaquote";
 }
 
 <h1>Get A Quote</h1>
 
-@using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Send your comments.</h4>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.FromName)
+@*@using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Send your comments.</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FromName)
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.FromEmail)
+        <div class="form-group">
+            @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FromEmail)
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Message)
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Message)
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Send" />
-        </div>
-    </div>
-    @*<div class="form-group">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Send" />
+            </div>
+        </div>*@
+@*<div class="form-group">
         @Html.LabelFor(m => m.Upload, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             <input type="file" name="upload" />
         </div>
     </div>*@
-}
+@*}*@
 @*@using System.Web.Optimization
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
     <script.render  src="~*@<!--/js/logreg.js"></script.render>-->
+
+
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<div>
+    <div class="col-md-6">
+        <div>
+            @if (ViewBag.Message == null)
+            {
+                <div>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="FromName">Name</label>
+                            <input asp-for="FromName" class="form-control" />
+                            <span asp-validation-for="FromName"
+                                  class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FromEmail">Email</label>
+                            <input asp-for="FromEmail" class="form-control" />
+                            <span asp-validation-for="FromEmail"
+                                  class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subject">Subject</label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject"
+                                  class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MobilePhone">Phone Number</label>
+                            <input asp-for="MobilePhone" class="form-control" />
+                            <span asp-validation-for="MobilePhone"
+                                  class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Message">Message</label>
+                            <textarea rows="5" cols="15"
+                                      asp-for="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message"
+                                  class="text-muted"></span>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                    class="btn btn-success">
+                                Send
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            }
+        </div>
+
+        <div>
+            <div>
+                @if (ViewBag.Message != null)
+                {
+                    <div>@ViewBag.Message</div>
+
+
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
