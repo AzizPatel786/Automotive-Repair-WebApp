@@ -13,6 +13,10 @@ using Automotive_Repair_WebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.Extensions.Configuration;
+using Automotive_Repair_WebApp.Helpers;
 
 namespace Automotive_Repair_WebApp.Controllers
 {
@@ -21,13 +25,13 @@ namespace Automotive_Repair_WebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         //private readonly IStaffRepository _staffRepository;
         private readonly AppDbContext db;
-
+        private IConfiguration configuration;
         private readonly IWebHostEnvironment webHostEnvironment;
 
-
         public HomeController(ILogger<HomeController> logger, AppDbContext context,
-                                 IWebHostEnvironment hostEnvironment)
+                                 IWebHostEnvironment hostEnvironment, IConfiguration _configuration)
         {
+            configuration = _configuration;
             _logger = logger;
             db = context;
             //_staffRepository = staffRepository;
@@ -71,30 +75,34 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public async Task<ActionResult> Getaquote(QuoteToEmail model)
+        public ActionResult Getaquote(QuoteToEmail quotetoemail, IFormFile[] attachments)
         {
-            if (ModelState.IsValid)
+            var body = "Name: " + quotetoemail.Name + "<br>Email: " + quotetoemail.Email + "<br>Car Model: " + quotetoemail.CarModel + "<br>Phone: " + quotetoemail.MobilePhone + "<br>Message: " + quotetoemail.Content + "<br>";
+            var mailHelper = new MailHelper(configuration);
+            List<string> fileNames = null;
+            if (attachments != null && attachments.Length > 0)
             {
-                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
-                var message = new MailMessage();
-                message.To.Add(new MailAddress("name@gmail.com")); //replace with valid value
-                message.Subject = "Your email subject";
-                message.Body = string.Format(body, model.FromName, model.FromEmail, model.Message);
-                message.IsBodyHtml = true;
-                if (model.Upload != null)
+                fileNames = new List<string>();
+                foreach (IFormFile attachment in attachments)
                 {
-                    message.Attachments.Add(new Attachment(model.Upload.InputStream, Path.GetFileName(model.Upload.FileName)));
-                }
-                using (var smtp = new SmtpClient())
-                {
-                    await smtp.SendMailAsync(message);
-                    return RedirectToAction("Sent");
+                    var path = Path.Combine(webHostEnvironment.WebRootPath, "uploads", attachment.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        attachment.CopyToAsync(stream);
+                    }
+                    fileNames.Add(path);
                 }
             }
+            if (mailHelper.Send(quotetoemail.Email, configuration["Gmail:Username"], quotetoemail.Subject, body, fileNames))
+            {
+                ViewBag.msg = "Sent Mail Successfully";
+            }
+            else
+            {
+                ViewBag.msg = "Failed";
+            }
+            return View("Index", new QuoteToEmail());
 
-            return View();
         }
         //public IActionResult Error()
         //{
@@ -106,7 +114,7 @@ namespace Automotive_Repair_WebApp.Controllers
 
 
 
-    public IActionResult Wof()
+        public IActionResult Wof()
         {
             return View();
         }

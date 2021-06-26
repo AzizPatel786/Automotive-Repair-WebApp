@@ -62,17 +62,17 @@
             @if (ViewBag.Message == null)
             {
                 <div>
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Getaquote">
                         <div class="form-group">
-                            <label asp-for="FromName">Name</label>
-                            <input asp-for="FromName" class="form-control" />
-                            <span asp-validation-for="FromName"
+                            <label asp-for="Name">Name</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name"
                                   class="text-muted"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="FromEmail">Email</label>
-                            <input asp-for="FromEmail" class="form-control" />
-                            <span asp-validation-for="FromEmail"
+                            <label asp-for="Email">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email"
                                   class="text-muted"></span>
                         </div>
                         <div class="form-group">
@@ -88,14 +88,30 @@
                                   class="text-muted"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Message">Message</label>
+                            <label asp-for="CarModel">Car Model</label>
+                            <input asp-for="CarModel" class="form-control" />
+                            <span asp-validation-for="CarModel"
+                                  class="text-muted"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label type="file" name="attachments" multiple="multiple" class="control-label"></label>
+                                <div class="custom-file">
+                                    <input type="file" name="attachments" multiple="multiple" class="custom-file-input" />
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <span type="file" name="attachments" multiple="multiple" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Content">Message</label>
                             <textarea rows="5" cols="15"
-                                      asp-for="Message" class="form-control"></textarea>
-                            <span asp-validation-for="Message"
+                                      asp-for="Content" class="form-control"></textarea>
+                            <span asp-validation-for="Content"
                                   class="text-muted"></span>
                         </div>
                         <div>
-                            <button type="submit"
+                            <button input type="submit" value="Send"
                                     class="btn btn-success">
                                 Send
                             </button>
