@@ -101,8 +101,13 @@ namespace Automotive_Repair_WebApp.Controllers
             {
                 ViewBag.msg = "Failed";
             }
-            return View("Index", new QuoteToEmail());
+            return View("Sent", new QuoteToEmail());
+           
 
+        }
+        public ActionResult Sent()
+        {
+            return View();
         }
         //public IActionResult Error()
         //{

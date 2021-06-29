@@ -462,34 +462,44 @@
                 <i class="icon" data-feather="mail"></i>
             </label>
             <input asp-for="Email" type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+            <span asp-validation-for="Email" class="text-danger"></span>
+
         </div>
         <div class="form-group position-relative">
             <label asp-for="Subject" class="d-block">
                 <i class="icon" data-feather="mail"></i>
             </label>
             <input asp-for="Subject" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Subject">
+            <span asp-validation-for="Subject" class="text-danger"></span>
+
         </div>
         <div class="form-group position-relative">
             <label asp-for="MobilePhone" for="formEmail" class="d-block">
                 <i class="icon" data-feather="mail"></i>
             </label>
-            <input asp-for="MobilePhone" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Subject">
+            <input asp-for="MobilePhone" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Mobile Phone">
+            <span asp-validation-for="MobilePhone" class="text-danger"></span>
+
         </div>
         <div class="form-group position-relative">
             <label asp-for="CarModel" for="formEmail" class="d-block">
                 <i class="icon" data-feather="mail"></i>
             </label>
             <input asp-for="CarModel" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Car Model">
+            <span asp-validation-for="CarModel" class="text-danger"></span>
+
         </div>
         <div class="form-group position-relative">
             <label type="file" name="attachments" multiple="multiple" for="formEmail" class="d-block">
                 <i class="icon" data-feather="mail"></i>
             </label>
-            <input type="file" name="attachments" multiple="multiple" id="formEmail" class="form-control form-control-lg thick" placeholder="Car Model">
+            <input type="file" name="attachments" multiple="multiple" id="formEmail" class="form-control form-control-lg thick" placeholder="attachment">
         </div>
         <!-- Message -->
         <div class="form-group message">
             <textarea asp-for="Content" id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Mensage"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+
         </div>
 
         <!-- Submit btn -->
