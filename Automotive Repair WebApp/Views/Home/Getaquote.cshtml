@@ -49,92 +49,89 @@
         @Scripts.Render("~/bundles/jqueryval")
     }
     <script.render  src="~*@<!--/js/logreg.js"></script.render>-->
-
-
-
 @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-<div>
-    <div class="col-md-6">
-        <div>
-            @if (ViewBag.Message == null)
-            {
-                <div>
-                    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Getaquote">
-                        <div class="form-group">
-                            <label asp-for="Name">Name</label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name"
-                                  class="text-muted"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Email">Email</label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email"
-                                  class="text-muted"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Subject">Subject</label>
-                            <input asp-for="Subject" class="form-control" />
-                            <span asp-validation-for="Subject"
-                                  class="text-muted"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="MobilePhone">Phone Number</label>
-                            <input asp-for="MobilePhone" class="form-control" />
-                            <span asp-validation-for="MobilePhone"
-                                  class="text-muted"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CarModel">Car Model</label>
-                            <input asp-for="CarModel" class="form-control" />
-                            <span asp-validation-for="CarModel"
-                                  class="text-muted"></span>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label type="file" name="attachments" multiple="multiple" class="control-label"></label>
-                                <div class="custom-file">
-                                    <input type="file" name="attachments" multiple="multiple" class="custom-file-input" />
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                                <span type="file" name="attachments" multiple="multiple" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Content">Message</label>
-                            <textarea rows="5" cols="15"
-                                      asp-for="Content" class="form-control"></textarea>
-                            <span asp-validation-for="Content"
-                                  class="text-muted"></span>
-                        </div>
-                        <div>
-                            <button input type="submit" value="Send"
-                                    class="btn btn-success">
-                                Send
-                            </button>
-                        </div>
-
-                    </form>
-                </div>
-            }
-        </div>
-
-        <div>
+    <div>
+        <div class="col-md-6">
             <div>
-                @if (ViewBag.Message != null)
+                @if (ViewBag.Message == null)
                 {
-                    <div>@ViewBag.Message</div>
+                    <div>
+                        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Getaquote">
+                            <div class="form-group">
+                                <label asp-for="Name">Name</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name"
+                                      class="text-muted"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email"
+                                      class="text-muted"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Subject">Subject</label>
+                                <input asp-for="Subject" class="form-control" />
+                                <span asp-validation-for="Subject"
+                                      class="text-muted"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="MobilePhone">Phone Number</label>
+                                <input asp-for="MobilePhone" class="form-control" />
+                                <span asp-validation-for="MobilePhone"
+                                      class="text-muted"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CarModel">Car Model</label>
+                                <input asp-for="CarModel" class="form-control" />
+                                <span asp-validation-for="CarModel"
+                                      class="text-muted"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label type="file" name="attachments" multiple="multiple" class="control-label"></label>
+                                    <div class="custom-file">
+                                        <input type="file" name="attachments" multiple="multiple" class="custom-file-input" />
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                    <span type="file" name="attachments" multiple="multiple" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Content">Message</label>
+                                <textarea rows="5" cols="15"
+                                          asp-for="Content" class="form-control"></textarea>
+                                <span asp-validation-for="Content"
+                                      class="text-muted"></span>
+                            </div>
+                            <div>
+                                <button input type="submit" value="Send"
+                                        class="btn btn-success">
+                                    Send
+                                </button>
+                            </div>
 
-
+                        </form>
+                    </div>
                 }
             </div>
-        </div>
-    </div>
 
-</div>*@
+            <div>
+                <div>
+                    @if (ViewBag.Message != null)
+                    {
+                        <div>@ViewBag.Message</div>
+
+
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>*@
 
 
 
@@ -444,71 +441,86 @@
     <!-- // FORM
     -------------------------------------------------------------
     ------------------------------------------------------------>
+    <div>
+        @if (ViewBag.Message == null)
+        {
+            <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Getaquote">
+                <h1 class="title text-center mb-4">Talk to Us</h1>
 
-    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Getaquote">
-        <h1 class="title text-center mb-4">Talk to Us</h1>
+                <!-- Name -->
+                <div class="form-group position-relative">
+                    <label asp-for="Name" for="formName" class="d-block">
+                        <i class="icon" data-feather="user"></i>
+                    </label>
+                    <input asp-for="Name" type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+                </div>
 
-        <!-- Name -->
-        <div class="form-group position-relative">
-            <label asp-for="Name" for="formName" class="d-block">
-                <i class="icon" data-feather="user"></i>
-            </label>
-            <input asp-for="Name" type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+                <!-- E-mail -->
+                <div class="form-group position-relative">
+                    <label asp-for="Email" for="formEmail" class="d-block">
+                        <i class="icon" data-feather="mail"></i>
+                    </label>
+                    <input asp-for="Email" type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div>
+                <div class="form-group position-relative">
+                    <label asp-for="Subject" class="d-block">
+                        <i class="icon" data-feather="mail"></i>
+                    </label>
+                    <input asp-for="Subject" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Subject">
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+
+                </div>
+                <div class="form-group position-relative">
+                    <label asp-for="MobilePhone" for="formEmail" class="d-block">
+                        <i class="icon" data-feather="mail"></i>
+                    </label>
+                    <input asp-for="MobilePhone" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Mobile Phone">
+                    <span asp-validation-for="MobilePhone" class="text-danger"></span>
+
+                </div>
+                <div class="form-group position-relative">
+                    <label asp-for="CarModel" for="formEmail" class="d-block">
+                        <i class="icon" data-feather="mail"></i>
+                    </label>
+                    <input asp-for="CarModel" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Car Model">
+                    <span asp-validation-for="CarModel" class="text-danger"></span>
+
+                </div>
+                <div class="form-group position-relative">
+                    <label type="file" name="attachments" multiple="multiple" for="formEmail" class="d-block">
+                        <i class="icon" data-feather="mail"></i>
+                    </label>
+                    <input type="file" name="attachments" multiple="multiple" id="formEmail" class="form-control form-control-lg thick" placeholder="attachment">
+                </div>
+                <!-- Message -->
+                <div class="form-group message">
+                    <textarea asp-for="Content" id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Mensage"></textarea>
+                    <span asp-validation-for="Content" class="text-danger"></span>
+
+                </div>
+
+                <!-- Submit btn -->
+                <div class="text-center">
+                    <button input type="submit" value="Send" class="btn btn-primary" tabIndex="-1">Send message</button>
+                </div>
+            </form>
+        }
+    </div>
+    <div>
+        <div>
+            @if (ViewBag.Message != null)
+            {
+                <div>@ViewBag.Message</div>
+
+
+            }
         </div>
-
-        <!-- E-mail -->
-        <div class="form-group position-relative">
-            <label asp-for="Email" for="formEmail" class="d-block">
-                <i class="icon" data-feather="mail"></i>
-            </label>
-            <input asp-for="Email" type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
-            <span asp-validation-for="Email" class="text-danger"></span>
-
-        </div>
-        <div class="form-group position-relative">
-            <label asp-for="Subject" class="d-block">
-                <i class="icon" data-feather="mail"></i>
-            </label>
-            <input asp-for="Subject" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Subject">
-            <span asp-validation-for="Subject" class="text-danger"></span>
-
-        </div>
-        <div class="form-group position-relative">
-            <label asp-for="MobilePhone" for="formEmail" class="d-block">
-                <i class="icon" data-feather="mail"></i>
-            </label>
-            <input asp-for="MobilePhone" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Mobile Phone">
-            <span asp-validation-for="MobilePhone" class="text-danger"></span>
-
-        </div>
-        <div class="form-group position-relative">
-            <label asp-for="CarModel" for="formEmail" class="d-block">
-                <i class="icon" data-feather="mail"></i>
-            </label>
-            <input asp-for="CarModel" type="text" id="formEmail" class="form-control form-control-lg thick" placeholder="Car Model">
-            <span asp-validation-for="CarModel" class="text-danger"></span>
-
-        </div>
-        <div class="form-group position-relative">
-            <label type="file" name="attachments" multiple="multiple" for="formEmail" class="d-block">
-                <i class="icon" data-feather="mail"></i>
-            </label>
-            <input type="file" name="attachments" multiple="multiple" id="formEmail" class="form-control form-control-lg thick" placeholder="attachment">
-        </div>
-        <!-- Message -->
-        <div class="form-group message">
-            <textarea asp-for="Content" id="formMessage" class="form-control form-control-lg" rows="7" placeholder="Mensage"></textarea>
-            <span asp-validation-for="Content" class="text-danger"></span>
-
-        </div>
-
-        <!-- Submit btn -->
-        <div class="text-center">
-            <button input type="submit" value="Send" class="btn btn-primary" tabIndex="-1">Send message</button>
-        </div>
-    </form>
-
+    </div>
 </div>
-<script>
-    feather.replace();
-</script>
+        <script>
+            feather.replace();
+        </script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
