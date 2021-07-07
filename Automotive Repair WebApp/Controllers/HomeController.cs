@@ -75,7 +75,7 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Getaquote(QuoteToEmail quotetoemail, IFormFile[] attachments)
+        public ActionResult Getaquote(QuoteToEmailViewModel quotetoemail, IFormFile[] attachments)
         {
             if (ModelState.IsValid) { 
                     var body = "Name: " + quotetoemail.Name + "<br>Email: " + quotetoemail.Email + "<br>Car Model: " + quotetoemail.CarModel + "<br>Phone: " + quotetoemail.MobilePhone + "<br>Message: " + quotetoemail.Content + "<br>";
@@ -103,7 +103,7 @@ namespace Automotive_Repair_WebApp.Controllers
                 ViewBag.msg = "Failed";
             }
             }
-            return View("Sent", new QuoteToEmail());
+            return View(quotetoemail);
            
 
         }
