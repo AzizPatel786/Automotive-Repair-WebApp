@@ -228,14 +228,21 @@ section p
 
 
 .slider {
-    position: relative;
+    /* position: relative;
     overflow: hidden;
-height: 100vh;
-width: 100vw;
-    top: -510px; /*for school screen*/
+    height: 100vh;
+    width: 100vw;
+    top: -510px;*/ /*for school screen*/
     /*top: -320px;*/
-/*    left: -405px;
-*/}
+    /*    left: -405px;
+*/
+    margin: 50px auto;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+    top: -510px;
+}
 
 .slide {
     position: absolute;
@@ -316,7 +323,7 @@ width: 100vw;
 /* Backgorund Images */
 
 .slide:first-child {
-    background: url('../Images/auto-3209511.jpg') top;
+    background: url('../Images/20210714_113428.jpg') top;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -324,7 +331,7 @@ width: 100vw;
 }
 
 .slide:nth-child(2) {
-    background: url('../Images/car-63930.jpg') no-repeat center top;
+    background: url('../Images/20210714_113246.jpg') no-repeat center top;
     background-size: cover;
     background-attachment: fixed;
 }
