@@ -62,6 +62,10 @@ namespace Automotive_Repair_WebApp.Controllers
         {
             return View();
         }
+        public IActionResult slideshow()
+        {
+            return View();
+        }
 
         public IActionResult Services()
         {

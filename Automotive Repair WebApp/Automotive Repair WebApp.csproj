@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Automotive_Repair_WebApp</RootNamespace>
+    <UserSecretsId>b0cbc117-e5aa-42d5-b391-5b5eb27a56e5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
