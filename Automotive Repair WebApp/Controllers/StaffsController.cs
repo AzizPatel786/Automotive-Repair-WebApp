@@ -174,6 +174,8 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
+        //[HttpPost]
+
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

@@ -338,7 +338,7 @@ namespace Automotive_Repair_WebApp.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Policy = "CreateRolePolicy")]
+        [Authorize(Policy = "CreateRolePolicy")]
         public async Task<IActionResult> CreateRole(CreateRoleViewModel model)
         {
             if (ModelState.IsValid)

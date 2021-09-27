@@ -7,84 +7,9 @@
 @{
     ViewData["Title"] = "Aboutus";
 }
-
-
 <div id="progressBarContainer">
     <div id="progressBar"></div>
-</div>
-@*<h1>Welcome.</h1>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <h1>Welcome.</h1>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-        provident eveniet veritatis ipsa id consectetur ab tenetur dolores eaque.
-        Temporibus laboriosam cum corporis amet doloremque animi aut ipsa ea a?
-    </p>*@
-
+</div> @*shows the progressbar on the right side of the page*@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 @if (Model.Any())
@@ -97,7 +22,7 @@
                 <div class="team_member">
                     <div class="member_img">
                         @*src="https://lh4.googleusercontent.com/-jqw7tla7R7I/WU84KqlnHjI/AAAAAAAAzs8/NuWva9ogN6kw0QVFzpBTAGYnZmooLH9swCLIBGAYYCw/w1440-h810-k-no/"*@
-                        <img src="~/Uploads/@staff.ProfilePicture" alt="our_team">
+                        <img src="~/Uploads/@staff.ProfilePicture" alt="our_team"> @*shows the profile picture *@
                         <div class="social_media">
                             <div  class="facebook item"><i class="fab fa-facebook-f"></i></div>
                             <div class="twitter item"><i class="fab fa-twitter"></i></div>
@@ -108,46 +33,7 @@
                     <span>@staff.Occupation</span>
                     <p>@staff.Email<br>@staff.Experience Years<br>@staff.Department</p>
                 </div>
-            }
-            @*<div class="team_member">
-                    <div class="member_img">
-                        <img src="~/Images/shop.JPG" alt="our_team">
-                        <div class="social_media">
-                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
-                        </div>
-                    </div>
-                    <h3>Damon</h3>
-                    <span>WOF Inspector</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-                </div>
-                <div class="team_member">
-                    <div class="member_img">
-                        <img src="~/Images/civic.JPG" alt="our_team">
-                        <div class="social_media">
-                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
-                        </div>
-                    </div>
-                    <h3>Dimitri</h3>
-                    <span>PanelBeater</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-                </div>
-                <div class="team_member">
-                    <div class="member_img">
-                        <img src="~/Images/streetview.JPG" alt="our_team">
-                        <div class="social_media">
-                            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
-                            <div class="twitter item"><i class="fab fa-twitter"></i></div>
-                            <div class="instagram item"><i class="fab fa-instagram"></i></div>
-                        </div>
-                    </div>
-                    <h3>Melvin</h3>
-                    <span>Mechanical Specialist</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
-                </div>*@
+            }    
         </div>
     </div>
 }

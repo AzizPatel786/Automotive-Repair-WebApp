@@ -21,75 +21,6 @@
     </style>
 </head>
 <body>
-    @*<header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>*@
-    <!--<header>
-        <a class="logo" href="/"><img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo"></a>
-        <nav>
-            <ul class="nav__links">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>-->
-    @*<li><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>*@
-    <!--<li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a></li>
-            </ul>
-        </nav>
-        <a class="cta" asp-area="" asp-controller="Home" asp-action="LoginRegister">Login</a>
-        <p1 class="menu cta">Menu</p1>
-    </header>
-    <div class="overlay">
-        <a class="close">&times;</a>
-        <div class="overlay__content">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-links">Home</a>
-            <a asp-area="" asp-controller="Home" asp-action="Tyres" class="nav-links">Tyres</a>
-            <a asp-area="" asp-controller="Home" asp-action="Services" class="nav-links">Services</a>
-            <a asp-area="" asp-controller="Home" asp-action="Getaquote" class="nav-links">Get A Quote</a>
-            <a asp-area="" asp-controller="Home" asp-action="Wof" class="nav-links">WOF</a>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-links">Privacy</a>
-            <a asp-area="" asp-controller="Home" asp-action="Aboutus" class="nav-links">AboutUs</a>
-        </div>
-    </div>-->
-
-
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <nav class="navbar">
@@ -112,8 +43,8 @@
                 <a asp-area="" asp-controller="Home" asp-action="Wof" class="nav-links">WOF</a>
             </li>
             @*<li>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-links">Privacy</a>
-        </li>*@
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-links">Privacy</a>
+                </li>*@
             <li>
                 <a asp-area="" asp-controller="Home" asp-action="Aboutus" class="nav-links">AboutUs</a>
             </li>
@@ -134,34 +65,34 @@
                                 </ul>
                             </li>
                         }
-                            <li>
-                                <a class="dropdown-item" href="#"> Staff  &raquo; </a>
-                                <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Staffs" asp-action="Index">Index</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"> Dropdown item 4 &raquo;</a>
-                                <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
-                                    <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
-                            <li><a class="dropdown-item" href="#"> Dropdown item 6 </a></li>
-                        </ul>
+                        <li>
+                            <a class="dropdown-item" href="#"> Staff  &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Staffs" asp-action="Index">Index</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"> Dropdown item 4 &raquo;</a>
+                            <ul class="submenu dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Another submenu 1</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 2</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 3</a></li>
+                                <li><a class="dropdown-item" href="#">Another submenu 4</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item" href="#"> Dropdown item 5 </a></li>
+                        <li><a class="dropdown-item" href="#"> Dropdown item 6 </a></li>
+                    </ul>
                 </li>
             }
 
-                @*<li>
-                <a asp-area="" asp-controller="Home" asp-action="LoginRegister" class="nav-links">Login</a>
-            </li>*@
-            </ul>
+            @*<li>
+                    <a asp-area="" asp-controller="Home" asp-action="LoginRegister" class="nav-links">Login</a>
+                </li>*@
+        </ul>
         <ul class="navbar-nav ml-auto">
             @*If the user is signed-in display Logout link*@
             @if (SignInManager.IsSignedIn(User))
@@ -268,52 +199,8 @@
             // end if innerWidth
 
         });
-        // DOMContentLoaded  end
+                // DOMContentLoaded  end
     </script>
-    <!--<div class="wrapper">
-
-
-        <div class="navbar navbar_2">
-            <div class="logo">Avondale<span>Tyres</span></div>
-            <ul class="menu">-->
-    @*<li><a href="#">Home</a></li>
-        <li><a href="#" class="active">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Profile</a></li>*@
-
-    <!--<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a class="active" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
-            </ul>
-            <ul class="social_items">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-
-
-
-        <div class="overlay">
-            <a class="close">&times;</a>
-            <div class="overlay__content">
-                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
-                <a asp-area="" asp-controller="Home" asp-action="Services">Services</a>
-                <a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
-                <a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
-                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                <a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a>
-            </div>
-        </div>
-
-    </div>-->
-
 
 
 
@@ -341,3 +228,114 @@
 </body>
 </html>
 
+
+@*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+<!--<header>
+    <a class="logo" href="/"><img src="https://www.freepnglogos.com/uploads/cleveland-auto-show-car-logo-png-25.png" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>-->
+@*<li><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>*@
+<!--<li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a></li>
+        </ul>
+    </nav>
+    <a class="cta" asp-area="" asp-controller="Home" asp-action="LoginRegister">Login</a>
+    <p1 class="menu cta">Menu</p1>
+</header>
+<div class="overlay">
+    <a class="close">&times;</a>
+    <div class="overlay__content">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-links">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="Tyres" class="nav-links">Tyres</a>
+        <a asp-area="" asp-controller="Home" asp-action="Services" class="nav-links">Services</a>
+        <a asp-area="" asp-controller="Home" asp-action="Getaquote" class="nav-links">Get A Quote</a>
+        <a asp-area="" asp-controller="Home" asp-action="Wof" class="nav-links">WOF</a>
+        <a asp-area="" asp-controller="Home" asp-action="Privacy" class="nav-links">Privacy</a>
+        <a asp-area="" asp-controller="Home" asp-action="Aboutus" class="nav-links">AboutUs</a>
+    </div>
+</div>-->
+<!--<div class="wrapper">
+
+
+    <div class="navbar navbar_2">
+        <div class="logo">Avondale<span>Tyres</span></div>
+        <ul class="menu">-->
+@*<li><a href="#">Home</a></li>
+    <li><a href="#" class="active">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Profile</a></li>*@
+
+<!--<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a class="active" asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+        </ul>
+        <ul class="social_items">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Tyres">Tyres</a>
+            <a asp-area="" asp-controller="Home" asp-action="Services">Services</a>
+            <a asp-area="" asp-controller="Home" asp-action="Getaquote">Get A Quote</a>
+            <a asp-area="" asp-controller="Home" asp-action="Wof">WOF</a>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a asp-area="" asp-controller="Home" asp-action="Aboutus">AboutUs</a>
+        </div>
+    </div>
+
+</div>-->
